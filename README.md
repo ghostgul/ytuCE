@@ -27,7 +27,6 @@ This repo is a digital archive of my university coursework, including:
  ┣ 📜 README.md
 ```
 ## Tech Stack Used
-This repo consists of code in various languages/tools:
-1. Programming Languages: Python, C, C++, Java, Assembly, MATLAB, TypeScript
-2. Tools & Platforms: Git, Linux, MASM/TASM, Visual Studio Code, JDK, NestJS
-3. 📊 Topics Covered: All lessons i cared enough to learn in the short term and cared enough AGAIN to write down for the long term
+1. **Programming Languages:** Python, C, C++, Java, Assembly, MATLAB, TypeScript
+2. **Tools & Platforms:** Git, Linux, MASM/TASM, Visual Studio Code, JDK, NestJS
+3. 📊 **Topics Covered:** All lessons i cared enough to learn in the short term and cared enough AGAIN to write down for the long term
