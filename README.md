@@ -1,3 +1,2 @@
 # 🎓 YTU Computer Engineering Repository
-Notes, assignments and projects
-📂 Sections
+*Notes, Assignments, and Projects from the marvelous misadventurous journey of YTÜ*
