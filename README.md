@@ -8,6 +8,7 @@ This repo is a digital archive of my university coursework, including:
 3. ✅ Projects - Homework on streoids, course related projects
 
 ## Repo structure
+```
 📦 ytuCE
  ┣ 📂 Notes
  ┃ ┣ 📂 Semester_1
@@ -24,7 +25,7 @@ This repo is a digital archive of my university coursework, including:
  ┃ ┃ ┗ 📜 lab2.asm
  ┃ ┃ ┗ ...   
  ┣ 📜 README.md
-
+```
 ## Tech Stack Used
 This repo consists of code in various languages/tools:
 1. Programming Languages: Python, C, C++, Java, Assembly, MATLAB, TypeScript
