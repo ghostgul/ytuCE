@@ -1,1 +1,85 @@
+STSG SEGMENT PARA STACK 'STSGM'
+    DW 20 DUP(?)
+STSG ENDS
 
+DTSG SEGMENT PARA 'DTSGM'
+    N DW 4                                  
+    midterm DW 77, 85, 64, 96                
+    final DW 56, 63, 86, 74                  
+    obp DW 4 DUP(?)                       
+DTSG ENDS
+
+CDSG SEGMENT PARA 'CDSGM'
+    ASSUME CS: CDSG, DS: DTSG, SS: STSG
+    
+    ANA PROC FAR
+
+        PUSH DS
+        XOR AX, AX
+        PUSH AX
+        
+        MOV AX, DTSG
+        MOV DS, AX
+
+        ; CODE
+        XOR AX, AX
+        MOV CX, N
+        MOV SI, 0
+
+    L1:
+        MOV AX, midterm[SI] 
+        MOV BX, 4
+        MUL BX
+        MOV BX, AX
+        MOV AX, final[SI]
+        MOV DX, 6
+        MUL DX
+        ADD AX, BX
+
+        MOV DX, 0           
+        MOV BX, 10
+        DIV BX
+        CMP DX, 5
+        JL NO_ROUND
+        INC AX
+
+    NO_ROUND:
+        MOV obp[SI], AX
+
+        ADD SI, 2 
+        LOOP L1
+
+        MOV CX, N 
+        DEC CX
+
+    OUTER_SORT:
+        MOV SI, 0
+        MOV DI, SI
+        MOV BX, CX
+        PUSH CX
+
+    INNER_SORT:
+        MOV AX, obp[SI]
+        CMP AX, obp[DI+2]
+        JGE NO_SWAP
+
+        MOV DX, obp[DI+2]
+        MOV obp[DI+2], AX
+        MOV obp[SI], DX
+
+    NO_SWAP:
+        ADD SI, 2
+        ADD DI, 2
+        DEC BX
+        JNZ INNER_SORT
+
+        POP CX
+        DEC CX
+        JNZ OUTER_SORT
+
+        RETF
+    ANA ENDP
+
+CDSG ENDS
+
+    END ANA
